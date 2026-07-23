@@ -21,12 +21,15 @@ popd # gem5
 
 gem5 pre-download-resources.py
 
-docker pull ghcr.io/gem5/gcn-gpu:v24-0
+# [Lan] Skip GPU Container images to save storage 
+# docker pull ghcr.io/gem5/gcn-gpu:v24-0
 
 wget http://dist.gem5.org/dist/v24-0/test-progs/square/square
 
-wget  https://dist.gem5.org/dist/v24-0/gpu-fs/kernel/vmlinux-gpu-ml-isca
+# [Lan] Skip GPU Kernel images to save storage
+#  wget  https://dist.gem5.org/dist/v24-0/gpu-fs/kernel/vmlinux-gpu-ml-isca
 
 # Note: this unzips to 55 GB so must in on /tmp.
 # See post_start.sh where it is unzipped each time the devcontainer starts
-wget  https://dist.gem5.org/dist/v24-0/gpu-fs/diskimage/x86-ubuntu-gpu-ml-isca.gz
+# [Lan] Skip GPU FS images to save storage
+# wget  https://dist.gem5.org/dist/v24-0/gpu-fs/diskimage/x86-ubuntu-gpu-ml-isca.gz
